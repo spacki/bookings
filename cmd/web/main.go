@@ -18,7 +18,7 @@ var session *scs.SessionManager
 
 func main() {
 
-	app.UseCache = true
+	app.UseCache = false
 	app.InProduction = false
 
 	session = scs.New()
