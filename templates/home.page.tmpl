@@ -1,0 +1,15 @@
+{{template "base" .}}
+
+{{define "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>this is the home page</h1>
+                <h3>very nice stuff, and even nicer</h3>
+                <h3>Title: {{index .StringMap "title"}}</h3>
+                <p> some information</p>
+
+            </div>
+        </div>
+    </div>
+{{end}}
