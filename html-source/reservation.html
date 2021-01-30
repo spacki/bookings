@@ -161,6 +161,7 @@
 <!--date picker -->
 <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/js/datepicker-full.min.js"></script>
 <script src="https://unpkg.com/notie"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -188,7 +189,8 @@
     //let myElement =  document.getElementById("myParagraph");
     //myElement.classList.add("red-text");
     document.getElementById("colorButton").addEventListener("click", function () {
-        notify("hello world", "error");
+        //notify("hello world", "error");
+        notifyModal("Eisern Union", "<em>wir gewinnen sowieso</em>", "success", "press me");
     })
 
     const elem = document.getElementById('reservation-dates');
@@ -202,6 +204,16 @@
             type: msgType,
             text: msg,
         })
+    }
+
+    function notifyModal(title, text, icon, confirmationButtonText) {
+        Swal.fire({
+            title: title,
+            html: text,
+            icon: icon,
+            confirmButtonText: confirmationButtonText
+        })
+
     }
 
 </script>
