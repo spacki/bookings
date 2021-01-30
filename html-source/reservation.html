@@ -10,6 +10,8 @@
     <!-- date picker -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/css/datepicker-bs4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+
 
     <style>
         .my-footer {
@@ -25,8 +27,8 @@
             width: 50%;
         }
 
-        .red-text {
-            color: red;
+        .notie-container {
+            box-shadow: none;
         }
     </style>
 </head>
@@ -158,6 +160,7 @@
         crossorigin="anonymous"></script>
 <!--date picker -->
 <script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.2/dist/js/datepicker-full.min.js"></script>
+<script src="https://unpkg.com/notie"></script>
 
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -185,12 +188,7 @@
     //let myElement =  document.getElementById("myParagraph");
     //myElement.classList.add("red-text");
     document.getElementById("colorButton").addEventListener("click", function () {
-        let myElement = document.getElementById("myParagraph")
-        if (myElement.classList.contains("red-text")) {
-            myElement.classList.remove("red-text");
-        } else {
-            myElement.classList.add("red-text");
-        }
+        notify("hello world", "error");
     })
 
     const elem = document.getElementById('reservation-dates');
@@ -198,6 +196,13 @@
         format: "yyyy-mm-dd"
         // ...options
     });
+
+    function notify(msg, msgType) {
+        notie.alert({
+            type: msgType,
+            text: msg,
+        })
+    }
 
 </script>
 </body>
